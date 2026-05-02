@@ -3,7 +3,7 @@ import '../css/app.css';
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Layout        from '@components/Layout';
 import LoadingScreen from '@components/LoadingScreen';
@@ -19,7 +19,7 @@ function App() {
         <>
             <LoadingScreen />
             <CustomCursor />
-            <BrowserRouter>
+            <HashRouter>
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index           element={<Home />}     />
@@ -28,7 +28,7 @@ function App() {
                         <Route path="contact"  element={<Contact />}  />
                     </Route>
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </>
     );
 }
