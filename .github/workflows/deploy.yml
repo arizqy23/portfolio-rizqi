@@ -1,0 +1,48 @@
+name: Deploy Portfolio ke GitHub Pages
+
+on:
+  push:
+    branches:
+      - main   # jalankan setiap push ke branch main
+
+permissions:
+  contents: write   # izin untuk push ke gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    name: Build & Deploy
+
+    steps:
+      # 1. Checkout kode
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Install dependensi
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Build statis dengan config khusus
+      - name: Build static
+        run: npm run build:static
+
+      # 5. Buat file 404.html (salin dari index.html)
+      # Ini penting agar React Router bisa handle refresh halaman
+      - name: Buat 404.html untuk React Router
+        run: cp dist/index.html dist/404.html
+
+      # 6. Deploy ke branch gh-pages
+      - name: Deploy ke GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          commit_message: 'deploy: ${{ github.sha }}'

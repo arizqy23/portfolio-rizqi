@@ -1,0 +1,33 @@
+# ── Laravel ──────────────────────────────────
+/vendor/
+/node_modules/
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+auth.json
+
+# ── Build output ──────────────────────────────
+/public/build/
+/public/hot
+/public/storage
+/dist/
+
+# ── Storage ───────────────────────────────────
+/storage/*.key
+/storage/app/public/*
+!/storage/app/public/.gitkeep
+/storage/framework/cache/data/*
+!/storage/framework/cache/data/.gitkeep
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# ── OS & IDE ──────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
