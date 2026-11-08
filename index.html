@@ -1,51 +1,27 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SPA redirect untuk GitHub Pages BrowserRouter -->
-  <script type="text/javascript">
-    (function(l) {
-      if (l.search[1] === '/' ) {
-        var decoded = l.search.slice(1).split('&').map(function(s) {
-          return s.replace(/~and~/g, '&')
-        }).join('?');
-        window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + decoded + l.hash
-        );
-      }
-    }(window.location))
-  </script>
-
-  <!-- SEO -->
-  <title>M. RIZQI M.R – Full-Stack Developer</title>
-  <meta name="description" content="Portofolio M. RIZQI M.R – Full-Stack Developer spesialis Laravel dan React." />
-  <meta name="author" content="M. RIZQI M.R" />
-  <meta name="keywords" content="laravel, react, fullstack, developer, portfolio, rizqi" />
-
-  <!-- Open Graph -->
-  <meta property="og:title"       content="M. RIZQI M.R – Full-Stack Developer" />
-  <meta property="og:description" content="Portofolio M. RIZQI M.R – Full-Stack Developer spesialis Laravel dan React." />
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://arizqy23.github.io/portfolio-rizqi/" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="M. RIZQI M.R – Full-Stack Developer" />
-  <meta name="twitter:description" content="Portofolio M. RIZQI M.R – Full-Stack Developer spesialis Laravel dan React." />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/portfolio-rizqi/favicon.ico" />
-
-  <!-- Google Fonts -->
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="M. Rizqi, full-stack developer dari Tuban. Web development dengan Laravel, React, dan workflow modern berbantuan AI." />
+  <meta property="og:title" content="M. RIZQI | Full-Stack Developer" />
+  <meta property="og:description" content="Selected web development projects by M. Rizqi." />
+  <title>M. RIZQI | Full-Stack Developer</title>
+  <link rel="icon" href="./Asset/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="./Asset/img/rizqi-portrait.jpg" as="image" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="/portfolio-rizqi/assets/index-BmwIwiPs.js"></script>
-  <link rel="stylesheet" crossorigin href="/portfolio-rizqi/assets/index-DiRqkW7R.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Asset/dist/app.css" />
+  <script src="./Asset/dist/app.js" defer></script>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="root"></div>
+  <noscript><main style="background:#090909;color:#eee;padding:40px;font-family:sans-serif"><h1>M. Rizqi, Full-Stack Developer</h1><p>Aktifkan JavaScript untuk membuka galeri karya interaktif.</p><a style="color:#ff5d65" href="mailto:arizqiboy@gmail.com">arizqiboy@gmail.com</a></main></noscript>
 </body>
 </html>
+
+
+
+
