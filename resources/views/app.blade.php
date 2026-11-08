@@ -8,7 +8,7 @@
     <meta property="og:title" content="M. RIZQI | Full-Stack Developer">
     <meta property="og:description" content="Selected web development projects by M. Rizqi.">
     <title>M. RIZQI | Full-Stack Developer</title>
-    <link rel="preload" href="{{ asset('Asset/img/rizqi-portrait.jpg') }}" as="image" fetchpriority="high">
+    <link rel="preload" href="{{ asset('Asset/img/arizqiboy-portrait.png') }}" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
