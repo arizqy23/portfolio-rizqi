@@ -9,7 +9,7 @@ import './styles.css';
 const MotionContext = createContext(true);
 const EASE = [0.22, 1, 0.36, 1];
 const categories = ['Semua', 'VFX', 'Film', '3D', 'Commercial', 'Full-Stack Development', 'Visual', 'Manipulation', 'Websites'];
-const featured = ['Portal PPID Desa Merkawang', 'Website Aset ITB Tuban'].map(key => archive.find(p => p.title === key)).filter(Boolean);
+const featured = ['Portal PPID Desa Merkawang', 'Website Aset ITB Tuban', 'Nguri Pasar – Kasir POS Warkop'].map(key => archive.find(p => p.title === key)).filter(Boolean);
 const experiences = [];
 const certificates = [];
 const awards = [];
@@ -256,7 +256,7 @@ function ProjectDialog({ project, onClose }) {
   const availableModes = [['layout', 'Layout'], ['solid', 'Solid'], ['material', 'Material'], ['lighting', 'Lighting'], ['final', 'Final render']].filter(([mode]) => activeShot?.[mode] && !(mode === 'solid' && activeShot.hideSolidMode));
   const effectiveMode = activeShot?.[renderMode] ? renderMode : availableModes[0]?.[0];
   const rendered = activeShot?.[effectiveMode] || activeShot?.image || project.image;
-  const sourceUrl = embedType === 'youtube' ? `https://www.youtube.com/watch?v=${embedMedia}` : embedType === 'drive' ? `https://drive.google.com/file/d/${embedMedia}/view` : project.type === 'render' ? rendered : project.media || project.image;
+  const sourceUrl = embedType === 'youtube' ? `https://www.youtube.com/watch?v=${embedMedia}` : embedType === 'drive' ? `https://drive.google.com/file/d/${embedMedia}/view` : project.type === 'render' ? rendered : project.type === 'website' ? project.media : project.media || project.image;
   const changeShot = next => { setMediaLoaded(false); setMediaFailed(false); setShot(next); };
   useEffect(() => {
     const previous = document.activeElement;

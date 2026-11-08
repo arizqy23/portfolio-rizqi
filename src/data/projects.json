@@ -1,4 +1,5 @@
 [
   {"type":"website","title":"Portal PPID Desa Merkawang","description":"Website Pejabat Pengelola Informasi dan Dokumentasi Desa Merkawang, Kecamatan Tambakboyo.","media":"https://ppid.merkawang-tambakboyo.desa.id/","role":"Web Development","year":"","category":"Websites","image":"./Asset/img/ppid-merkawang.png","renders":[]},
-  {"type":"website","title":"Website Aset ITB Tuban","description":"Website sistem informasi aset untuk ITB Tuban.","media":"https://aset.itbtuban.ac.id/","role":"Web Development","year":"","category":"Websites","image":"./Asset/img/aset-itb-tuban.png","renders":[]}
+  {"type":"website","title":"Website Aset ITB Tuban","description":"Website sistem informasi aset untuk ITB Tuban.","media":"https://aset.itbtuban.ac.id/","role":"Web Development","year":"","category":"Websites","image":"./Asset/img/aset-itb-tuban.png","renders":[]},
+  {"type":"website","title":"Nguri Pasar – Kasir POS Warkop","description":"Aplikasi kasir POS untuk warkop dengan pencarian dan kategori menu, keranjang pesanan, pilihan area atau meja, serta pembayaran tunai, QRIS, transfer, dan bon.","media":"","role":"Full-Stack Development","year":"","category":"Websites","image":"./Asset/img/nguri-pasar.png","renders":[]}
 ]
