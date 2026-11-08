@@ -4,7 +4,14 @@ export default function CustomCursor() {
     const dotRef  = useRef(null);
     const ringRef = useRef(null);
 
+    const shouldHideCursor = () => (
+        typeof window !== 'undefined' &&
+        (window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches)
+    );
+
     useEffect(() => {
+        if (shouldHideCursor()) return;
+
         const dot  = dotRef.current;
         const ring = ringRef.current;
         if (!dot || !ring) return;
@@ -75,7 +82,7 @@ export default function CustomCursor() {
     }, []);
 
     // Sembunyikan di layar sentuh
-    if ('ontouchstart' in window) return null;
+    if (shouldHideCursor()) return null;
 
     return (
         <>

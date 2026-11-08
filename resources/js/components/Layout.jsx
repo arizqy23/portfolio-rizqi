@@ -13,9 +13,9 @@ export default function Layout() {
     }, []);
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col overflow-x-hidden pb-24 md:pb-0">
             <Navbar scrolled={scrolled} />
-            <main className="flex-1">
+            <main className="flex-1 overflow-x-hidden">
                 <Outlet />
             </main>
             <Footer />

@@ -5,10 +5,10 @@
 
 // ── Info Pribadi ─────────────────────────────────────────────
 export const PROFIL = {
-    nama:       'M. RIZQI M.R',
+    nama:       'alfarizqi',
     title:      'Full-Stack Developer',
-    tagline:    'Spesialis Laravel & React',
-    deskripsi:  'Full-Stack Developer yang bersemangat membangun aplikasi web berkualitas tinggi. Saya fokus pada kode yang bersih, performa yang cepat, dan pengalaman pengguna yang menyenangkan.',
+    tagline:    'AI-Assisted Full-Stack Developer',
+    deskripsi:  'Full-Stack Developer yang membangun aplikasi web dengan workflow modern berbantuan AI. Saya memadukan logika pemrograman, vibe coding, dan eksekusi cepat untuk membuat produk digital yang rapi, fungsional, dan nyaman digunakan.',
     foto:       'images/avatars/foto.jpg',
     email:      'arizqiboy@gmail.com',
     github:     'https://github.com/rizqimr',
@@ -114,11 +114,15 @@ export const SKILLS = [
     { id: 14, nama: 'Laragon',      ikon: 'LA', kategori: 'Tools',    level: 95 },
     { id: 15, nama: 'VS Code',      ikon: 'VS', kategori: 'Tools',    level: 92 },
     { id: 16, nama: 'Postman',      ikon: 'PM', kategori: 'Tools',    level: 85 },
-    { id: 17, nama: 'Figma',        ikon: 'FG', kategori: 'Tools',    level: 70 },
+
+    // Desain Grafis
+    { id: 17, nama: 'Desain Grafis', ikon: 'DG', kategori: 'Desain Grafis', level: 78 },
+    { id: 18, nama: 'CorelDRAW',     ikon: 'CD', kategori: 'Desain Grafis', level: 82 },
+    { id: 19, nama: 'Figma',         ikon: 'FG', kategori: 'Desain Grafis', level: 76 },
 ];
 
 // ── Kategori skill yang tersedia ─────────────────────────────
-export const KATEGORI_SKILLS = ['Frontend', 'Backend', 'Database', 'Tools'];
+export const KATEGORI_SKILLS = ['Frontend', 'Backend', 'Database', 'Tools', 'Desain Grafis'];
 
 // ── Pengalaman / Timeline ────────────────────────────────────
 export const PENGALAMAN = [

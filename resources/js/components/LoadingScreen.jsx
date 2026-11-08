@@ -1,135 +1,140 @@
 import React, { useEffect, useState } from 'react';
+import { PROFIL } from '@data/data';
 
 export default function LoadingScreen() {
-    const [phase,   setPhase]   = useState(0); // 0=masuk, 1=tahan, 2=keluar
+    const [leaving, setLeaving] = useState(false);
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {
-        // Fase 1 — tahan 1.2 detik
-        const t1 = setTimeout(() => setPhase(1), 400);
-        // Fase 2 — mulai animasi keluar
-        const t2 = setTimeout(() => setPhase(2), 1600);
-        // Fase 3 — hilangkan dari DOM
-        const t3 = setTimeout(() => setVisible(false), 2300);
-        return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+        const leaveTimer = setTimeout(() => setLeaving(true), 650);
+        const removeTimer = setTimeout(() => setVisible(false), 1050);
+
+        return () => {
+            clearTimeout(leaveTimer);
+            clearTimeout(removeTimer);
+        };
     }, []);
 
     if (!visible) return null;
 
     return (
-        <div
-            style={{
-                position:   'fixed',
-                inset:      0,
-                zIndex:     99999,
-                background: '#020617',
-                display:    'flex',
-                flexDirection: 'column',
-                alignItems:    'center',
-                justifyContent:'center',
-                gap: '24px',
-                opacity:    phase === 2 ? 0 : 1,
-                transform:  phase === 2 ? 'scale(1.04)' : 'scale(1)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease',
-                pointerEvents: phase === 2 ? 'none' : 'all',
-            }}
-        >
-            {/* Logo animasi */}
-            <div
-                style={{
-                    opacity:   phase >= 0 ? 1 : 0,
-                    transform: phase >= 0 ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.9)',
-                    transition:'opacity 0.5s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1)',
-                    textAlign: 'center',
-                }}
-            >
-                {/* Ring SVG berputar */}
-                <div style={{ position: 'relative', width: 80, height: 80, margin: '0 auto 20px' }}>
-                    <svg width="80" height="80" viewBox="0 0 80 80"
-                         style={{ animation: 'loaderRingSpin 1s linear infinite', position: 'absolute', inset: 0 }}>
-                        <circle cx="40" cy="40" r="34"
-                                fill="none" stroke="rgba(59,110,255,0.1)" strokeWidth="3" />
-                        <circle cx="40" cy="40" r="34"
-                                fill="none" stroke="#3b6eff" strokeWidth="3"
-                                strokeLinecap="round"
-                                strokeDasharray="60 154"
-                                strokeDashoffset="0" />
-                    </svg>
-                    <svg width="80" height="80" viewBox="0 0 80 80"
-                         style={{ animation: 'loaderRingSpin 1.8s linear infinite reverse', position: 'absolute', inset: 0, opacity: 0.4 }}>
-                        <circle cx="40" cy="40" r="26"
-                                fill="none" stroke="#f97316" strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeDasharray="30 133"
-                                strokeDashoffset="0" />
-                    </svg>
-                    {/* Titik tengah */}
-                    <div style={{
-                        position: 'absolute', inset: 0,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}>
-                        <div style={{
-                            width: 10, height: 10, borderRadius: '50%',
-                            background: '#3b6eff',
-                            boxShadow: '0 0 16px #3b6eff',
-                            animation: 'loaderDotPulse 1.2s ease-in-out infinite',
-                        }} />
-                    </div>
-                </div>
-
-                {/* Nama */}
-                <div style={{
-                    fontFamily: '"Space Grotesk", sans-serif',
-                    fontWeight: 700,
-                    fontSize:   28,
-                    color:      '#fff',
-                    letterSpacing: '0.02em',
-                }}>
-                    MR2<span style={{ color: '#3b6eff' }}>.</span>
-                </div>
-
-                {/* Subtitle */}
-                <div style={{
-                    fontFamily: '"Sora", sans-serif',
-                    fontSize:   13,
-                    color:      'rgba(148,163,184,0.7)',
-                    marginTop:  6,
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    opacity:    phase >= 1 ? 1 : 0,
-                    transform:  phase >= 1 ? 'translateY(0)' : 'translateY(8px)',
-                    transition: 'opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s',
-                }}>
-                    Full-Stack Developer
+        <div className={`loader-clean ${leaving ? 'is-leaving' : ''}`}>
+            <div className="loader-clean__inner">
+                <div className="loader-clean__mark">MR</div>
+                <div>
+                    <div className="loader-clean__name">{PROFIL.nama}</div>
+                    <div className="loader-clean__role">{PROFIL.title}</div>
                 </div>
             </div>
 
-            {/* Progress bar */}
-            <div style={{
-                width: 120, height: 2,
-                background: 'rgba(255,255,255,0.06)',
-                borderRadius: 99,
-                overflow: 'hidden',
-                opacity: phase >= 1 ? 1 : 0,
-                transition: 'opacity 0.3s ease',
-            }}>
-                <div style={{
-                    height: '100%',
-                    borderRadius: 99,
-                    background: 'linear-gradient(90deg, #3b6eff, #f97316)',
-                    width: phase === 2 ? '100%' : phase === 1 ? '70%' : '20%',
-                    transition: 'width 0.8s cubic-bezier(0.22,1,0.36,1)',
-                }} />
+            <div className="loader-clean__bar" aria-hidden="true">
+                <span />
             </div>
 
             <style>{`
-                @keyframes loaderRingSpin {
-                    from { transform: rotate(0deg); }
-                    to   { transform: rotate(360deg); }
+                .loader-clean {
+                    position: fixed;
+                    inset: 0;
+                    z-index: 99999;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 22px;
+                    background: #020617;
+                    color: #f8fafc;
+                    opacity: 1;
+                    transition: opacity 360ms ease;
                 }
-                @keyframes loaderDotPulse {
-                    0%,100% { transform: scale(1);    opacity: 1;   }
-                    50%      { transform: scale(1.4);  opacity: 0.6; }
+
+                .loader-clean.is-leaving {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                .loader-clean__inner {
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    transform: translateY(0);
+                    animation: loaderCleanIn 420ms cubic-bezier(0.22,1,0.36,1) both;
+                }
+
+                .loader-clean__mark {
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid rgba(255,255,255,0.12);
+                    background: rgba(255,255,255,0.04);
+                    font-family: "Space Grotesk", sans-serif;
+                    font-size: 15px;
+                    font-weight: 800;
+                    letter-spacing: -0.06em;
+                }
+
+                .loader-clean__name {
+                    font-family: "Space Grotesk", sans-serif;
+                    font-size: 18px;
+                    font-weight: 800;
+                    letter-spacing: -0.03em;
+                    line-height: 1.1;
+                }
+
+                .loader-clean__role {
+                    margin-top: 4px;
+                    color: #64748b;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                }
+
+                .loader-clean__bar {
+                    width: 190px;
+                    height: 2px;
+                    border-radius: 999px;
+                    overflow: hidden;
+                    background: rgba(255,255,255,0.08);
+                }
+
+                .loader-clean__bar span {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    background: #e2e8f0;
+                    transform: translateX(-100%);
+                    animation: loaderCleanProgress 760ms cubic-bezier(0.22,1,0.36,1) forwards;
+                }
+
+                @keyframes loaderCleanIn {
+                    from { opacity: 0; transform: translateY(8px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+
+                @keyframes loaderCleanProgress {
+                    to { transform: translateX(0); }
+                }
+
+                @media (max-width: 480px) {
+                    .loader-clean__inner { gap: 12px; }
+                    .loader-clean__mark { width: 40px; height: 40px; border-radius: 13px; }
+                    .loader-clean__name { font-size: 17px; }
+                    .loader-clean__bar { width: 170px; }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .loader-clean,
+                    .loader-clean__inner,
+                    .loader-clean__bar span {
+                        animation: none !important;
+                        transition: none !important;
+                    }
+
+                    .loader-clean__bar span { transform: none; }
                 }
             `}</style>
         </div>
