@@ -9,7 +9,7 @@ import './styles.css';
 const MotionContext = createContext(true);
 const EASE = [0.22, 1, 0.36, 1];
 const categories = ['Semua', 'VFX', 'Film', '3D', 'Commercial', 'Full-Stack Development', 'Visual', 'Manipulation', 'Websites'];
-const featured = ['Portal PPID Desa Merkawang', 'Website Aset ITB Tuban', 'Nguri Pasar – Kasir POS Warkop'].map(key => archive.find(p => p.title === key)).filter(Boolean);
+const featured = ['Portal PPID Desa Merkawang', 'Website Aset ITB Tuban', 'Nguri Pasar – Kasir POS Warkop', 'Website Produk Sabun Sunny', 'Website SMK Sunnatunnur Senori', 'Asmaraloka.id – Kado Digital'].map(key => archive.find(p => p.title === key)).filter(Boolean);
 const experiences = [];
 const certificates = [];
 const awards = [];
