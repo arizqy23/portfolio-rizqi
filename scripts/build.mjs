@@ -15,4 +15,6 @@ await build({
 await mkdir('dist/Asset/img', { recursive: true });
 await cp('index.html', 'dist/index.html');
 await cp('Asset/img', 'dist/Asset/img', { recursive: true, force: true });
+await mkdir('public/Asset', { recursive: true });
+await cp('dist/Asset', 'public/Asset', { recursive: true, force: true });
 console.log('Static portfolio built in dist/');

@@ -1,19 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>M. RIZQI M.R – Full-Stack Developer</title>
-    <meta name="description" content="Portofolio M. RIZQI M.R – Full-Stack Developer spesialis Laravel dan React." />
-    <meta name="author" content="M. RIZQI M.R" />
-    <meta property="og:title" content="M. RIZQI M.R – Full-Stack Developer" />
-    <meta property="og:description" content="Portofolio M. RIZQI M.R – Full-Stack Developer spesialis Laravel dan React." />
-    <meta property="og:type" content="website" />
-    @viteReactRefresh
-    @vite('resources/js/app.jsx')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="M. Rizqi, full-stack developer dari Tuban. Web development dengan Laravel, React, dan workflow modern berbantuan AI.">
+    <meta property="og:title" content="M. RIZQI | Full-Stack Developer">
+    <meta property="og:description" content="Selected web development projects by M. Rizqi.">
+    <title>M. RIZQI | Full-Stack Developer</title>
+    <link rel="preload" href="{{ asset('Asset/img/rizqi-portrait.jpg') }}" as="image" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Asset/dist/app.css') }}">
+    <script src="{{ asset('Asset/dist/app.js') }}" defer></script>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="root"></div>
+    <noscript><main style="background:#090909;color:#eee;padding:40px;font-family:sans-serif"><h1>M. Rizqi, Full-Stack Developer</h1><p>Aktifkan JavaScript untuk membuka galeri karya interaktif.</p><a style="color:#ff5d65" href="mailto:arizqiboy@gmail.com">arizqiboy@gmail.com</a></main></noscript>
 </body>
 </html>

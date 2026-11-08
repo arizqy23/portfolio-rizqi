@@ -9,6 +9,7 @@ auth.json
 
 # ── Build output ──────────────────────────────
 /public/build/
+/public/Asset/
 /public/hot
 /public/storage
 /dist/
