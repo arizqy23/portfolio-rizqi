@@ -1,7 +1,4 @@
 [
-  {"type":"website","title":"SIAKAD Mini","description":"Sistem informasi akademik sederhana dengan manajemen mahasiswa, mata kuliah, jadwal, dan nilai. Dilengkapi fitur cetak transkrip PDF.","media":"https://github.com/rizqimr/siakad","role":"Web Development","year":"","category":"Websites","image":"","renders":[]},
-  {"type":"website","title":"Admin Dashboard","description":"Dashboard analytics real-time dengan grafik interaktif, manajemen pengguna, dan laporan ekspor Excel. Dibangun dengan React dan Recharts.","media":"https://github.com/rizqimr/dashboard","role":"Frontend Development","year":"","category":"Websites","image":"","renders":[]},
-  {"type":"website","title":"Blog CMS","description":"CMS blog full-featured dengan editor Markdown, manajemen kategori dan tag, sistem komentar, dan SEO-friendly URL.","media":"https://github.com/rizqimr/blog-cms","role":"Web Development","year":"","category":"Websites","image":"","renders":[]},
   {"type":"website","title":"Portal PPID Desa Merkawang","description":"Website Pejabat Pengelola Informasi dan Dokumentasi Desa Merkawang, Kecamatan Tambakboyo.","media":"https://ppid.merkawang-tambakboyo.desa.id/","role":"Web Development","year":"","category":"Websites","image":"./Asset/img/ppid-merkawang.png","renders":[]},
   {"type":"website","title":"Website Aset ITB Tuban","description":"Website sistem informasi aset untuk ITB Tuban.","media":"https://aset.itbtuban.ac.id/","role":"Web Development","year":"","category":"Websites","image":"./Asset/img/aset-itb-tuban.png","renders":[]}
 ]
