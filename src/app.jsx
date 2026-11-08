@@ -61,7 +61,7 @@ function Header({ enabled, onToggle }) {
     window.addEventListener('keydown', onKey); return () => window.removeEventListener('keydown', onKey);
   }, []);
   return <header className="site-header">
-    <a className="wordmark" href="#home" aria-label="Rizqi, beranda">RIZQI<span>®</span></a>
+    <a className="wordmark" href="#home" aria-label="Rizqi, beranda">MR-2<span>®</span></a>
     <nav className="desktop-nav" aria-label="Navigasi utama">{[['portfolio', 'Karya'], ['awards', 'Awards'], ['about', 'Tentang'], ['experience', 'Perjalanan'], ['contact', 'Kontak']].map(([id, label]) => <a key={id} href={`#${id}`} className={active === id ? 'active' : ''}>{label}</a>)}</nav>
     <div className="header-actions"><button className="motion-toggle" onClick={onToggle} aria-label={enabled ? 'Jeda animasi' : 'Aktifkan animasi'} aria-pressed={!enabled}>{enabled ? <Pause size={13} /> : <Play size={13} />}<span>Motion {enabled ? 'on' : 'off'}</span></button><a className="header-contact" href="#contact">Let’s talk <ArrowUpRight size={16} /></a><button className="menu-toggle icon-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Tutup menu' : 'Buka menu'}>{open ? <X /> : <Menu />}</button></div>
     <AnimatePresence>{open && <motion.nav id="mobile-menu" className="mobile-menu" aria-label="Navigasi mobile" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}>{[['home', 'Beranda'], ['portfolio', 'Karya'], ['awards', 'Awards'], ['about', 'Tentang'], ['experience', 'Perjalanan'], ['contact', 'Kontak']].map(([id, label], i) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}><span>0{i + 1}</span>{label}<ArrowUpRight size={18} /></a>)}</motion.nav>}</AnimatePresence>
@@ -318,8 +318,8 @@ function App() {
         <Contact onProject={setProject}/>
       </main>
       <footer className="footer">
-        <a className="wordmark" href="#home">RIZQI<span>®</span></a>
-        <span>© {new Date().getFullYear()} RIZQI. BUILDING FOR THE WEB.</span>
+        <a className="wordmark" href="#home">MR-2<span>®</span></a>
+        <span>© {new Date().getFullYear()} MR-2. BUILDING FOR THE WEB.</span>
         <div>
           <a href="https://github.com/rizqimr" target="_blank" rel="noopener noreferrer" aria-label="GitHub @rizqimr"><Github size={17}/></a>
           <a href="https://linkedin.com/in/rizqimr" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn M. Rizqi"><Linkedin size={17}/></a>
